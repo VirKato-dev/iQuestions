@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="flag_frantsija_new" type="id">flag_frantsija_new.jpg</item>
+    <item name="flag_germanija_enl" type="id">flag_germanija_enl</item>
+    <item name="flag_rf_enl" type="id">flag_rf_enl</item>
+    <item name="flag_ukraina_new" type="id">flag_ukraina_new</item>
+</resources>

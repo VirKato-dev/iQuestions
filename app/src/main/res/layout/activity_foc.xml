@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2F6B9A"
+    tools:context=".FOC_Act">
+
+    <TextView
+        android:id="@+id/t_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="iQuestions"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="392dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_question">
+
+        <Button
+            android:id="@+id/Franch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Franch"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+        <Button
+            android:id="@+id/Germany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Germany"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <Button
+            android:id="@+id/Russian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Russian"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:orientation="horizontal"></LinearLayout>
+
+        <Button
+            android:id="@+id/Japan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Japan"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ImageFlag"
+        android:layout_width="170dp"
+        android:layout_height="187dp"
+        android:src="@drawable/img_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="119dp" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="140dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp"
+        android:src="?attr/actionModeCloseDrawable"
+        android:translationY="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/t_question"
+        app:layout_constraintEnd_toStartOf="@+id/t_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
