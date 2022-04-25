@@ -16,8 +16,8 @@ public class LevelsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_levels);
 
 
-       Button Flags = findViewById(R.id.FOC);
-        findViewById(R.id.FOC).setOnClickListener(view -> {
+        Button flags = findViewById(R.id.FOC);
+        flags.setOnClickListener(view -> {
             Intent intent = new Intent(LevelsActivity.this, FOC_Act.class);
             startActivity(intent);
         });
