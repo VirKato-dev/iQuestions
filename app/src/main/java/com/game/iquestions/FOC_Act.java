@@ -1,8 +1,5 @@
 package com.game.iquestions;
 
-import static java.nio.file.Paths.get;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,31 +14,12 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/***
- * Угадай флаг страны
- */
 public class FOC_Act extends AppCompatActivity {
 
-    /***
-     * Для обращения к общим методам приложения
-     */
     private MyApp app;
-
-    /***
-     * Кнопки вариантов ответа
-     */
     private Button first, second, third, fourth;
-
-    /***
-     * Текст вопроса
-     */
     private TextView t_question;
-
-    /***
-     * Список вопросов
-     */
     private ArrayList<HashMap<String, Object>> questions = new ArrayList();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +34,6 @@ public class FOC_Act extends AppCompatActivity {
         fourth = findViewById(R.id.Japan);
         t_question = findViewById(R.id.t_question);
 
-        // Не обязательно создавать переменную для хранения ссылки на кнопку,
-        // если с ней производится только одно действие.
-        // Тем более при выходе из onCreate, переменная исчезнет
-//        Button back = findViewById(R.id.back);
-        findViewById(R.id.back).setOnClickListener(view -> {
-            Intent back1 = new Intent(FOC_Act.this, LevelsActivity.class);
-            startActivity(back1);
-        });
-
         initQuestions();
 
         setNewQuestion();
@@ -75,10 +44,10 @@ public class FOC_Act extends AppCompatActivity {
     private void initQuestions() {
         // очистим список создав новый экземпляр списка
         questions = new ArrayList<>();
-        addNextQuestion(questions, "Это флаг какой страны? Россия", R.drawable.flag_rf_enl, "Франция", "Германия", "Россия", "Япония", "Россия");
-        addNextQuestion(questions, "Это флаг какой страны? Франция", R.drawable.flag_frantsija_new, "Франция", "Германия", "Россия", "Япония", "Франция");
-        addNextQuestion(questions, "Это флаг какой страны? Германия", R.drawable.flag_germanija_enl, "Франция", "Германия", "Россия", "Япония", "Германия");
-        addNextQuestion(questions, "Это флаг какой страны? Украина", R.drawable.flag_ukraina_new, "Франция", "Германия", "Россия", "Украина", "Украина");
+        addNextQuestion(questions, "Это флаг какой страны?", R.drawable.flag_rf_enl, "Франция", "Германия", "Россия", "Япония", "Россия");
+        addNextQuestion(questions, "Это флаг какой страны?", R.drawable.flag_frantsija_new, "Франция", "Германия", "Россия", "Япония", "Франция");
+        addNextQuestion(questions, "Это флаг какой страны?", R.drawable.flag_germanija_enl, "Франция", "Германия", "Россия", "Япония", "Германия");
+        addNextQuestion(questions, "Это флаг какой страны?", R.drawable.flag_ukraina_new, "Франция", "Германия", "Россия", "Украина", "Украина");
     }
 
     //Добавить вопрос в список
@@ -102,19 +71,14 @@ public class FOC_Act extends AppCompatActivity {
 
     //Показать новый вопрос
     private void setNewQuestion() {
-        AtomicInteger score = new AtomicInteger();
-        ImageView flag_frantsija_new = findViewById(R.id.flag_frantsija_new);
-        ImageView flag_germanija_enl = findViewById(R.id.flag_germanija_enl);
-        ImageView flag_rf_enl = findViewById(R.id.flag_rf_enl);
-        ImageView flag_ukraina_new = findViewById(R.id.flag_ukraina_new);
+        //AtomicInteger score = new AtomicInteger();
         int size = questions.size();
-
         if (size > 0) {
             // вопросы ещё не кончились
             int q = size > 1 ? new Random().nextInt(size - 1) : 0;
             HashMap<String, Object> map = questions.get(q);
             int image = (int) map.get("image");
-            flag_ukraina_new.setImageResource(image);
+            ((ImageView)findViewById(R.id.flag_frantsija_new)).setImageResource(image);
             // удалить вопрос из списка
             questions.remove(map);
 
@@ -139,7 +103,7 @@ public class FOC_Act extends AppCompatActivity {
                 if (text.equals(map.get("right").toString())) {
                     v[i].setOnClickListener(v1 -> {
                         app.showToastShort("Правильный ответ");
-                        score.getAndIncrement();
+                        //score.getAndIncrement();
                         setNewQuestion();
                     });
                 } else {
@@ -160,7 +124,8 @@ public class FOC_Act extends AppCompatActivity {
 
     private void endQuestions() {
         app.showToastShort("Вопросы кончились");
-        app.showToastShort("Посмотри свой балл");}
+    }
 
-    public void onBackPressed(){app.showToastShort("Нельзя вернуться назад!");}
+    public void onBackPressed(){
+    }
 }

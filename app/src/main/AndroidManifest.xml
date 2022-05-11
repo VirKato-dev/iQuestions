@@ -11,17 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IQuestions">
         <activity
-            android:screenOrientation="portrait"
             android:name=".FOC_Act"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".LevelsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:screenOrientation="portrait"
             android:name=".StartApp"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

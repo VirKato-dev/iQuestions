@@ -18,7 +18,7 @@ public class StartApp extends AppCompatActivity {
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(StartApp.this, LevelsActivity.class);
+                Intent intent = new Intent(StartApp.this, FOC_Act.class);
                 startActivity(intent);
             }
         }, 5000);
